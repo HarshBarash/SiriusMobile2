@@ -6,23 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation" />
 
-    <com.rd.PageIndicatorView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_14sdp"
-        android:layout_marginTop="@dimen/_44sdp"
-        app:layout_constraintStart_toStartOf="@+id/viewpager"
-        app:layout_constraintTop_toTopOf="@+id/viewpager"
-        app:piv_animationType="worm"
-        app:piv_radius="5dp"
-        app:piv_selectedColor="@color/white"
-        app:piv_strokeWidth="5dp"
-        app:piv_unselectedColor="@color/firstonboarding"
-        app:piv_viewPager="@id/viewpager" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_main"
+        android:layout_margin="@dimen/_20sdp"
+        android:background="@drawable/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+        app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+        app:menu="@menu/bottom_menu"
+        app:labelVisibilityMode="labeled"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
