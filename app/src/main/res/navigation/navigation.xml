@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/onBoarding1Fragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="harshbarash.github.siriustwo.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_clinerFragment"
+            app:destination="@id/clinerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_bonusFragment"
+            app:destination="@id/bonusFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoarding1Fragment"
+        android:name="harshbarash.github.siriustwo.OnBoarding1Fragment"
+        android:label="fragment_on_boarding1"
+        tools:layout="@layout/fragment_on_boarding1" >
+        <action
+            android:id="@+id/action_onBoarding1Fragment_to_onBoarding2Fragment"
+            app:destination="@id/onBoarding2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoarding3Fragment"
+        android:name="harshbarash.github.siriustwo.OnBoarding3Fragment"
+        android:label="fragment_on_boarding3"
+        tools:layout="@layout/fragment_on_boarding3" >
+        <action
+            android:id="@+id/action_onBoarding3Fragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoarding2Fragment"
+        android:name="harshbarash.github.siriustwo.OnBoarding2Fragment"
+        android:label="fragment_on_boarding2"
+        tools:layout="@layout/fragment_on_boarding2" >
+        <action
+            android:id="@+id/action_onBoarding2Fragment_to_onBoarding3Fragment"
+            app:destination="@id/onBoarding3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clinerFragment"
+        android:name="harshbarash.github.siriustwo.ClinerFragment"
+        android:label="fragment_cliner"
+        tools:layout="@layout/fragment_cliner" >
+        <action
+            android:id="@+id/action_clinerFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_clinerFragment_to_helpFragment2"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_clinerFragment_to_bonusFragment2"
+            app:destination="@id/bonusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bonusFragment"
+        android:name="harshbarash.github.siriustwo.BonusFragment"
+        android:label="fragment_bonus"
+        tools:layout="@layout/fragment_bonus" >
+        <action
+            android:id="@+id/action_bonusFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_bonusFragment_to_clinerFragment2"
+            app:destination="@id/clinerFragment" />
+        <action
+            android:id="@+id/action_bonusFragment_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="harshbarash.github.siriustwo.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_mainFragment2"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_helpFragment_to_bonusFragment2"
+            app:destination="@id/bonusFragment" />
+        <action
+            android:id="@+id/action_helpFragment_to_clinerFragment2"
+            app:destination="@id/clinerFragment" />
+    </fragment>
+</navigation>
