@@ -18,11 +18,10 @@ class OnBoarding3Fragment : Fragment(R.layout.fragment_on_boarding3) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOnBoarding3Binding.bind(view)
 
-        val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
+//        val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnnext3.setOnClickListener {
-            viewPager?.currentItem = 1
-            findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_mainFragment)
             onBoardingFinished()
         }
 
