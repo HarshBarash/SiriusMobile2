@@ -12,6 +12,9 @@
     <color name="InactiveBottomNavIconColor">#BEC4FB</color>
     <color name="activeBottomNavIconColor">#3656F9</color>
 
+    <color name="colorofdigitsroom">#9AA9FA</color>
+    <color name="colorofinactiveroom">#EDF0FF</color>
+
 
     <color name="firstonboarding">#8698F9</color>
 

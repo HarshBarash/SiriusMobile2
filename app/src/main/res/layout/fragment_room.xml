@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RoomFragment">
+
+
+    <RadioGroup
+        android:id="@+id/rgRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/oneRoom"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="1"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/twoRoom"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="2"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/threeRoom"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="3"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null"
+            >
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/fourRoom"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="4"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rgToilet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgRoom">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/oneT"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="1"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/twoT"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="2"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/threeT"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="3"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/fourT"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:text="4"
+            android:gravity="center"
+            android:textSize="@dimen/_24sdp"
+            android:textColor="@color/colorofdigitsroom"
+            android:drawable="@drawable/custom_room"
+            android:button="@null">
+
+        </com.google.android.material.radiobutton.MaterialRadioButton>
+    </RadioGroup>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btntoadditionaly"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_34sdp"
+        android:backgroundTint="@color/activeBottomNavIconColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgToilet"
+        app:layout_constraintVertical_bias="0.255"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tvtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="40dp"
+        tools:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btntoadditionaly" />
+
+    <TextView
+        android:id="@+id/tvprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/btntoadditionaly"
+        app:layout_constraintEnd_toEndOf="@+id/btntoadditionaly"
+        app:layout_constraintTop_toTopOf="@+id/btntoadditionaly"
+        app:layout_constraintVertical_bias="0.48" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
