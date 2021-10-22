@@ -109,7 +109,7 @@
 
     <TextView
         android:id="@+id/debugbro"
-        android:layout_width="59dp"
+        android:layout_width="match_parent"
         android:layout_height="18dp"
         android:layout_marginTop="88dp"
         android:text="TextView"
@@ -120,7 +120,7 @@
 
     <TextView
         android:id="@+id/debugbro2"
-        android:layout_width="59dp"
+        android:layout_width="match_parent"
         android:layout_height="18dp"
         android:layout_marginTop="112dp"
         android:text="TextView"
@@ -131,7 +131,7 @@
 
     <TextView
         android:id="@+id/debugbro3"
-        android:layout_width="59dp"
+        android:layout_width="match_parent"
         android:layout_height="18dp"
         android:layout_marginTop="144dp"
         android:text="TextView"

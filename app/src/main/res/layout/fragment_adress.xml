@@ -53,7 +53,7 @@
         app:layout_constraintVertical_bias="0.372" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etWG"
+        android:id="@+id/etFlat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="hint"
@@ -65,7 +65,7 @@
         app:layout_constraintVertical_bias="0.514" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etKorpus"
+        android:id="@+id/etCorpus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="hint"
@@ -77,7 +77,7 @@
         app:layout_constraintVertical_bias="0.615" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etPodezd"
+        android:id="@+id/etEntrance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="hint"

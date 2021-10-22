@@ -2,12 +2,9 @@ package harshbarash.github.siriustwo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import harshbarash.github.siriustwo.databinding.FragmentAdditionallyBinding
 import harshbarash.github.siriustwo.databinding.FragmentAdressBinding
 
 
@@ -37,14 +34,29 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
         val orderPrice = args.orderPrice
         val orderTime = args.orderTime
 
-        val action = AdditionallyFragmentDirections.actionAdditionallyFragmentToAdressFragment(
+        val city = binding.etCity.text.toString()
+        val street = binding.etStreet.text.toString()
+        val house = binding.etHome.text.toString()
+        val flat = binding.etFlat.text.toString()
+        val corpus = binding.etCorpus.text.toString()
+        val entrance = binding.etEntrance.text.toString()
+        val comment = binding.etComment.text.toString()
+
+        val action = AdressFragmentDirections.actionAdressFragmentToDataFragment(
             roomandtoilet,
             price,
             room,
             toilet,
             order,
             orderPrice,
-            orderTime
+            orderTime,
+            city,
+            street,
+            house,
+            flat,
+            corpus,
+            entrance,
+            comment
         )
 
         findNavController().navigate(action)

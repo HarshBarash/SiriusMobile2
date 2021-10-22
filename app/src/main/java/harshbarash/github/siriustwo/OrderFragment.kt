@@ -5,55 +5,108 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import harshbarash.github.siriustwo.databinding.FragmentOrderBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [OrderFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class OrderFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class OrderFragment : Fragment(R.layout.fragment_order) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+    private lateinit var binding: FragmentOrderBinding
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentOrderBinding.bind(view)
+
+        val args: OrderFragmentArgs by navArgs()
+        val roomandtoilet = args.roomandtoilet
+        val price = args.price
+        val room = args.room
+        val toilet = args.toilet
+        val order = args.order
+        val orderPrice = args.orderPrice
+        val orderTime = args.orderTime
+        val city = args.city
+        val street = args.street
+        val house = args.house
+        val flat = args.flat
+        val corpus = args.corpus
+        val entrance = args.entrance
+        val comment = args.comment
+        val data = args.data
+        val dataTime = args.dataTime
+
+
+        binding.data1.text = roomandtoilet.toString()
+        binding.data2.text = price.toString()
+        binding.data3.text = room.toString()
+        binding.data4.text = toilet.toString()
+        binding.data5.text = order.toString()
+        binding.data6.text = orderPrice.toString()
+        binding.data7.text = orderTime.toString()
+        binding.data8.text = city.toString()
+        binding.data9.text = street.toString()
+        binding.data10.text = house.toString()
+        binding.data11.text = flat.toString()
+        binding.data12.text = corpus.toString()
+        binding.data13.text = entrance.toString()
+        binding.data14.text = comment.toString()
+        binding.data15.text = data.toString()
+        binding.data16.text = dataTime.toString()
+
+
+        binding.data16.setOnClickListener {
+            //переход дальше
+            dataTransmission()
         }
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false)
+    private fun dataTransmission() {
+
+        val args: OrderFragmentArgs by navArgs()
+        val roomandtoilet = args.roomandtoilet
+        val price = args.price
+        val room = args.room
+        val toilet = args.toilet
+        val order = args.order
+        val orderPrice = args.orderPrice
+        val orderTime = args.orderTime
+        val city = args.city
+        val street = args.street
+        val house = args.house
+        val flat = args.flat
+        val corpus = args.corpus
+        val entrance = args.entrance
+        val comment = args.comment
+        val data = args.data
+        val dataTime = args.dataTime
+
+
+
+        val action = DataFragmentDirections.actionDataFragmentToPayFragment(
+            roomandtoilet,
+            price,
+            room,
+            toilet,
+            order,
+            orderPrice,
+            orderTime,
+            city,
+            street,
+            house,
+            flat,
+            corpus,
+            entrance,
+            comment,
+            data,
+            dataTime
+        )
+
+        findNavController().navigate(action)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment OrderFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OrderFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
 }

@@ -21,6 +21,9 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
         binding = FragmentAdditionallyBinding.bind(view)
 
 
+        val args: RoomFragmentArgs by navArgs()
+        val roomandtoilet = args.roomandtoilet
+
         binding.btnonadress.setOnClickListener {
 
             val WashDishes = binding.cbWashDishes.isChecked
@@ -54,7 +57,7 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
                     ( if(Removesomething) 320 else 0) +
                     ( if(Cleaning) 500 else 0)
 
-            val orderTime = ( if(WashDishes)  20 else 0 ) +
+            val orderTime = (( if(WashDishes)  20 else 0 ) +
                     ( if(WashMicrowave) 20 else 0 ) +
                     ( if(CleaningOfCloathes) 20 else 0) +
                     ( if(WashBath) 15 else 0) +
@@ -62,11 +65,11 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
                     ( if(WashPetTray) 10 else 0) +
                     ( if(CleaningWool) 10 else 0) +
                     ( if(Removesomething) 10 else 0) +
-                    ( if(Cleaning) 20 else 0)
+                    ( if(Cleaning) 20 else 0) /60)
 
             binding.debugbro.text = order
             binding.debugbro2.text = orderPrice.toString()
-            binding.debugbro3.text = orderTime.toString()
+            binding.debugbro3.text = (orderTime + roomandtoilet).toString()
 
             dataTransmission()
         }

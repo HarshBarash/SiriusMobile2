@@ -211,6 +211,8 @@
         <argument
             android:name="comment"
             app:argType="string" />
+        <argument android:name="orderTime" />
+        <argument android:name="orderPrice" />
     </fragment>
     <fragment
         android:id="@+id/payFragment"
@@ -239,6 +241,31 @@
         <argument
             android:name="order"
             app:argType="string" />
+        <argument android:name="orderPrice" />
+        <argument android:name="orderTime" />
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <argument
+            android:name="street"
+            app:argType="string" />
+        <argument
+            android:name="house"
+            app:argType="string" />
+        <argument
+            android:name="flat"
+            app:argType="string" />
+        <argument
+            android:name="corpus"
+            app:argType="string" />
+        <argument android:name="entrance" />
+        <argument
+            android:name="comment"
+            app:argType="string" />
+        <argument
+            android:name="data"
+            app:argType="string" />
+        <argument android:name="dataTime" />
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
@@ -267,6 +294,31 @@
         <argument
             android:name="order"
             app:argType="string" />
+        <argument android:name="orderPrice" />
+        <argument android:name="orderTime" />
+        <argument
+            android:name="city"
+            app:argType="string" />
+        <argument
+            android:name="street"
+            app:argType="string" />
+        <argument
+            android:name="house"
+            app:argType="string" />
+        <argument
+            android:name="flat"
+            app:argType="string" />
+        <argument
+            android:name="corpus"
+            app:argType="string" />
+        <argument
+            android:name="entrance"
+            app:argType="string" />
+        <argument
+            android:name="comment"
+            app:argType="string" />
+        <argument android:name="data" />
+        <argument android:name="dataTime" />
     </fragment>
     <fragment
         android:id="@+id/orderDoneFragment"
