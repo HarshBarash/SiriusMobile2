@@ -61,7 +61,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
 
         mOrderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
 
-        binding.data16.setOnClickListener {
+        binding.btnonmain.setOnClickListener {
             insertDataToDatabase()
             findNavController().navigate(R.id.action_orderFragment_to_mainFragment)
         }
@@ -77,7 +77,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         val toilet = args.toilet.toString()
         val order = args.order.toString()
         val orderPrice = args.orderPrice.toString()
-        val orderTime = args.orderTime.toInt()
+        val orderTime = args.orderTime
         val city = args.city.toString()
         val street = args.street.toString()
         val house = args.house.toString()
@@ -89,6 +89,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         val dataTime = args.dataTime
 
         val ourorder = Order(0, city, street, house, corpus, flat, Integer.parseInt(price.toString()))
+        mOrderViewModel.addOrder(ourorder)
     }
 
 

@@ -7,7 +7,7 @@
     tools:context=".data.fragments.add.RoomFragment">
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnonadress"
+        android:id="@+id/btnonmain"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_34sdp"
         android:backgroundTint="@color/activeBottomNavIconColor"

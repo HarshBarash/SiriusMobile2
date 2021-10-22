@@ -1,14 +1,10 @@
 package harshbarash.github.siriustwo.data.fragments.list
 
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.data.Order
 import harshbarash.github.siriustwo.databinding.CustomRowBinding
-import harshbarash.github.siriustwo.databinding.FragmentMainBinding
 
 class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
