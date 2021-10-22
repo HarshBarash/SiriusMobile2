@@ -3,14 +3,19 @@ package harshbarash.github.siriustwo.data.fragments.add
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import harshbarash.github.siriustwo.R
+import harshbarash.github.siriustwo.data.Order
+import harshbarash.github.siriustwo.data.OrderViewModel
 import harshbarash.github.siriustwo.databinding.FragmentOrderBinding
 
 
 class OrderFragment : Fragment(R.layout.fragment_order) {
 
+
+    private lateinit var mOrderViewModel: OrderViewModel
 
     private lateinit var binding: FragmentOrderBinding
 
@@ -54,27 +59,28 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         binding.data15.text = data.toString()
         binding.data16.text = dataTime.toString()
 
+        mOrderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
 
         binding.data16.setOnClickListener {
-            //переход дальше
-            dataTransmission()
+            insertDataToDatabase()
+            findNavController().navigate(R.id.action_orderFragment_to_mainFragment)
         }
 
     }
 
-    private fun dataTransmission() {
+    private fun insertDataToDatabase() {
 
         val args: OrderFragmentArgs by navArgs()
         val roomandtoilet = args.roomandtoilet
         val price = args.price
-        val room = args.room
-        val toilet = args.toilet
-        val order = args.order
-        val orderPrice = args.orderPrice
-        val orderTime = args.orderTime
-        val city = args.city
-        val street = args.street
-        val house = args.house
+        val room = args.room.toString()
+        val toilet = args.toilet.toString()
+        val order = args.order.toString()
+        val orderPrice = args.orderPrice.toString()
+        val orderTime = args.orderTime.toInt()
+        val city = args.city.toString()
+        val street = args.street.toString()
+        val house = args.house.toString()
         val flat = args.flat
         val corpus = args.corpus
         val entrance = args.entrance
@@ -82,28 +88,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         val data = args.data
         val dataTime = args.dataTime
 
-
-
-        val action = DataFragmentDirections.actionDataFragmentToPayFragment(
-            roomandtoilet,
-            price,
-            room,
-            toilet,
-            order,
-            orderPrice,
-            orderTime,
-            city,
-            street,
-            house,
-            flat,
-            corpus,
-            entrance,
-            comment,
-            data,
-            dataTime
-        )
-
-        findNavController().navigate(action)
+        val ourorder = Order(0, city, street, house, corpus, flat, price)
     }
 
 

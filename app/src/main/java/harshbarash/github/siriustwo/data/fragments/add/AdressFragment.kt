@@ -1,8 +1,10 @@
 package harshbarash.github.siriustwo.data.fragments.add
 
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import harshbarash.github.siriustwo.R
@@ -43,24 +45,36 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
         val entrance = binding.etEntrance.text.toString()
         val comment = binding.etComment.text.toString()
 
-        val action = AdressFragmentDirections.actionAdressFragmentToDataFragment(
-            roomandtoilet,
-            price,
-            room,
-            toilet,
-            order,
-            orderPrice,
-            orderTime,
-            city,
-            street,
-            house,
-            flat,
-            corpus,
-            entrance,
-            comment
-        )
+        if (inputCheck(city, street, house, flat)){
 
-        findNavController().navigate(action)
+            val action = AdressFragmentDirections.actionAdressFragmentToDataFragment(
+                roomandtoilet,
+                price,
+                room,
+                toilet,
+                order,
+                orderPrice,
+                orderTime,
+                city,
+                street,
+                house,
+                flat,
+                corpus,
+                entrance,
+                comment
+            )
+
+            findNavController().navigate(action)
+
+        } else {
+            Toast.makeText(requireContext(), "Пожалуйста введите Город, Улицу, Дом и Квартиру обязательно", Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
+
+    private fun inputCheck(city: String, street: String, house: String, flat: String):Boolean{
+        return !(TextUtils.isEmpty(city) && TextUtils.isEmpty(street) && TextUtils.isEmpty(house) && TextUtils.isEmpty(flat) )
     }
 
 
