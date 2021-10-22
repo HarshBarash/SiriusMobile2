@@ -88,7 +88,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         val data = args.data
         val dataTime = args.dataTime
 
-        val ourorder = Order(0, city, street, house, corpus, flat, price)
+        val ourorder = Order(0, city, street, house, corpus, flat, Integer.parseInt(price.toString()))
     }
 
 

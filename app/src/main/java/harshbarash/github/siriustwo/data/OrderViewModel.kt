@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class OrderViewModel(application: Application): AndroidViewModel(application) {
 
-    private val readAllData: LiveData<List<Order>>
+    val readAllData: LiveData<List<Order>>
     private val repository: OrderRepository
 
     init {
