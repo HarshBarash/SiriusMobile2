@@ -1,14 +1,11 @@
-package harshbarash.github.siriustwo
+package harshbarash.github.siriustwo.data.fragments.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
+import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.databinding.FragmentMainBinding
-import harshbarash.github.siriustwo.databinding.FragmentOnBoarding2Binding
 
 
 class MainFragment : Fragment(R.layout.fragment_main) {

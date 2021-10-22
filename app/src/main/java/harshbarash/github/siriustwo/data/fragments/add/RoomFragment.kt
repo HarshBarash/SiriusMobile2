@@ -1,12 +1,10 @@
-package harshbarash.github.siriustwo
+package harshbarash.github.siriustwo.data.fragments.add
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.RadioGroup
 import androidx.navigation.fragment.findNavController
+import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.databinding.FragmentRoomBinding
 
 class RoomFragment : Fragment(R.layout.fragment_room) {

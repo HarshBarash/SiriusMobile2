@@ -1,22 +1,24 @@
-package harshbarash.github.siriustwo
+package harshbarash.github.siriustwo.data.fragments.add
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import harshbarash.github.siriustwo.databinding.FragmentAdressBinding
+import harshbarash.github.siriustwo.R
+import harshbarash.github.siriustwo.databinding.FragmentDataBinding
 
 
-class AdressFragment : Fragment(R.layout.fragment_adress) {
+class DataFragment : Fragment(R.layout.fragment_data) {
 
-    private lateinit var binding: FragmentAdressBinding
+
+    private lateinit var binding: FragmentDataBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAdressBinding.bind(view)
+        binding = FragmentDataBinding.bind(view)
 
-        binding.btnontime.setOnClickListener {
+        binding.btnonpay.setOnClickListener {
             //переход дальше
             dataTransmission()
         }
@@ -25,7 +27,7 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
 
     private fun dataTransmission() {
 
-        val args: AdressFragmentArgs by navArgs()
+        val args: DataFragmentArgs by navArgs()
         val roomandtoilet = args.roomandtoilet
         val price = args.price
         val room = args.room
@@ -33,16 +35,17 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
         val order = args.order
         val orderPrice = args.orderPrice
         val orderTime = args.orderTime
+        val city = args.city
+        val street = args.street
+        val house = args.house
+        val flat = args.flat
+        val corpus = args.corpus
+        val entrance = args.entrance
+        val comment = args.comment
+        val data = "18.1"
+        val dataTime = "18:00"
 
-        val city = binding.etCity.text.toString()
-        val street = binding.etStreet.text.toString()
-        val house = binding.etHome.text.toString()
-        val flat = binding.etFlat.text.toString()
-        val corpus = binding.etCorpus.text.toString()
-        val entrance = binding.etEntrance.text.toString()
-        val comment = binding.etComment.text.toString()
-
-        val action = AdressFragmentDirections.actionAdressFragmentToDataFragment(
+        val action = DataFragmentDirections.actionDataFragmentToPayFragment(
             roomandtoilet,
             price,
             room,
@@ -56,7 +59,9 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
             flat,
             corpus,
             entrance,
-            comment
+            comment,
+            data,
+            dataTime
         )
 
         findNavController().navigate(action)

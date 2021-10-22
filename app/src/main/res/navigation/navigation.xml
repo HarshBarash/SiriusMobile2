@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="harshbarash.github.siriustwo.MainFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.list.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -108,7 +108,7 @@
     </fragment>
     <fragment
         android:id="@+id/additionallyFragment"
-        android:name="harshbarash.github.siriustwo.AdditionallyFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.add.AdditionallyFragment"
         android:label="fragment_additionally"
         tools:layout="@layout/fragment_additionally" >
         <action
@@ -133,7 +133,7 @@
     </fragment>
     <fragment
         android:id="@+id/adressFragment"
-        android:name="harshbarash.github.siriustwo.AdressFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.add.AdressFragment"
         android:label="fragment_adress"
         tools:layout="@layout/fragment_adress" >
         <action
@@ -165,7 +165,7 @@
     </fragment>
     <fragment
         android:id="@+id/dataFragment"
-        android:name="harshbarash.github.siriustwo.DataFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.add.DataFragment"
         android:label="fragment_data"
         tools:layout="@layout/fragment_data" >
         <action
@@ -216,7 +216,7 @@
     </fragment>
     <fragment
         android:id="@+id/payFragment"
-        android:name="harshbarash.github.siriustwo.PayFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.add.PayFragment"
         android:label="fragment_pay"
         tools:layout="@layout/fragment_pay" >
         <action
@@ -269,7 +269,7 @@
     </fragment>
     <fragment
         android:id="@+id/orderFragment"
-        android:name="harshbarash.github.siriustwo.OrderFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.add.OrderFragment"
         android:label="fragment_order"
         tools:layout="@layout/fragment_order" >
         <action
@@ -340,7 +340,7 @@
     </fragment>
     <fragment
         android:id="@+id/roomFragment"
-        android:name="harshbarash.github.siriustwo.RoomFragment"
+        android:name="harshbarash.github.siriustwo.data.fragments.add.RoomFragment"
         android:label="fragment_room"
         tools:layout="@layout/fragment_room" >
         <action
