@@ -9,6 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="statusbar">#F7F8FF</color>
     <color name="bottom">#F6F7FF</color>
+
+    <color name="spec">#FEFCFC</color>
+
+
     <color name="InactiveBottomNavIconColor">#BEC4FB</color>
     <color name="activeBottomNavIconColor">#3656F9</color>
     <color name="spl">#3146C6</color>

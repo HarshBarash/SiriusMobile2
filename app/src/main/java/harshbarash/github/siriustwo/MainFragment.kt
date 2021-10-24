@@ -42,8 +42,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             findNavController().navigate(R.id.action_mainFragment_to_roomFragment)
         }
 
+        binding.btnBuyNextMain.visibility = View.INVISIBLE
         binding.actualBtn.setOnClickListener {
             if (mOrderViewModel.readAllData.value?.isEmpty() == false) {
+                binding.btnBuyNextMain.visibility = View.VISIBLE
                 binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
                 binding.completedBtn.setTextColor(Color.parseColor("#C6CFFF"))
                 binding.womanClear.visibility = View.INVISIBLE
@@ -55,9 +57,14 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.textView3.visibility = View.INVISIBLE
                 binding.textView2.visibility = View.INVISIBLE
                 binding.imageView3.visibility = View.INVISIBLE
+                binding.imageView7.visibility = View.INVISIBLE
                 binding.recyclerview.visibility = View.VISIBLE
 
+                binding.viewActual.visibility = View.INVISIBLE
+                binding.viewCompleted.visibility = View.VISIBLE
+
             } else {
+                binding.btnBuyNextMain.visibility = View.INVISIBLE
                 binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
                 binding.completedBtn.setTextColor(Color.parseColor("#C6CFFF"))
                 binding.womanClear.visibility = View.VISIBLE
@@ -69,10 +76,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 binding.textView3.visibility = View.VISIBLE
                 binding.textView2.visibility = View.VISIBLE
                 binding.imageView3.visibility = View.VISIBLE
+                binding.imageView7.visibility = View.VISIBLE
                 binding.recyclerview.visibility = View.INVISIBLE
+
+                binding.viewActual.visibility = View.VISIBLE
+                binding.viewCompleted.visibility = View.INVISIBLE
             }
         }
         binding.completedBtn.setOnClickListener {
+            binding.btnBuyNextMain.visibility = View.INVISIBLE
             binding.completedBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
             binding.actualBtn.setTextColor(Color.parseColor("#C6CFFF"))
             binding.womanClear.visibility = View.VISIBLE
@@ -84,11 +96,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             binding.textView3.visibility = View.VISIBLE
             binding.textView2.visibility = View.VISIBLE
             binding.imageView3.visibility = View.VISIBLE
+            binding.imageView7.visibility = View.VISIBLE
             binding.recyclerview.visibility = View.INVISIBLE
+
+            binding.viewActual.visibility = View.VISIBLE
+            binding.viewCompleted.visibility = View.INVISIBLE
         }
 
-        if (mOrderViewModel.readAllData.value?.isEmpty() == false) {
-            //binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
+        if (mOrderViewModel.readAllData.value?.isNullOrEmpty() == false) {
+            binding.btnBuyNextMain.visibility = View.VISIBLE
             binding.womanClear.visibility = View.INVISIBLE
             binding.rectBuy.visibility = View.INVISIBLE
             binding.purchaiseTv.visibility = View.INVISIBLE
@@ -98,11 +114,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             binding.textView3.visibility = View.INVISIBLE
             binding.textView2.visibility = View.INVISIBLE
             binding.imageView3.visibility = View.INVISIBLE
+            binding.imageView7.visibility = View.INVISIBLE
             binding.recyclerview.visibility = View.VISIBLE
 
         } else {
-
-            //binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
+            binding.btnBuyNextMain.visibility = View.INVISIBLE
             binding.womanClear.visibility = View.VISIBLE
             binding.rectBuy.visibility = View.VISIBLE
             binding.purchaiseTv.visibility = View.VISIBLE
@@ -112,6 +128,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             binding.textView3.visibility = View.VISIBLE
             binding.textView2.visibility = View.VISIBLE
             binding.imageView3.visibility = View.VISIBLE
+            binding.imageView7.visibility = View.VISIBLE
             binding.recyclerview.visibility = View.INVISIBLE
         }
     }

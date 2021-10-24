@@ -14,7 +14,6 @@ import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.data.OrderViewModel
 import harshbarash.github.siriustwo.databinding.FragmentMainBinding
 
-
 class MainFragment : Fragment(R.layout.fragment_main) {
 
     private lateinit var binding: FragmentMainBinding
@@ -23,7 +22,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMainBinding.bind(view)
-
 
         //rv
         val adapter = ListAdapter()
@@ -41,71 +39,95 @@ class MainFragment : Fragment(R.layout.fragment_main) {
             findNavController().navigate(R.id.action_mainFragment_to_roomFragment)
         }
 
-        if (mOrderViewModel.readAllData.value?.isEmpty() == true) {
-            recyclerView.visibility = View.INVISIBLE
-            binding.womanClear.visibility = View.VISIBLE
-            binding.imageView4.visibility = View.VISIBLE
-            binding.imageView3.visibility = View.VISIBLE
-            binding.textView2.visibility = View.VISIBLE
-            binding.imageView3.visibility = View.VISIBLE
-            binding.imageView5.visibility = View.VISIBLE
-            binding.textView4.visibility = View.VISIBLE
-            binding.rectBuy.visibility = View.VISIBLE
-            binding.purchaiseTv.visibility = View.VISIBLE
-            binding.imageView7.visibility = View.VISIBLE
-            binding.textView3.visibility = View.VISIBLE
-        } else {
-            recyclerView.visibility = View.VISIBLE
-            binding.womanClear.visibility = View.INVISIBLE
-            binding.imageView4.visibility = View.INVISIBLE
-            binding.imageView3.visibility = View.INVISIBLE
-            binding.textView2.visibility = View.INVISIBLE
-            binding.imageView3.visibility = View.INVISIBLE
-            binding.imageView5.visibility = View.INVISIBLE
-            binding.textView4.visibility = View.INVISIBLE
-            binding.rectBuy.visibility = View.INVISIBLE
-            binding.purchaiseTv.visibility = View.INVISIBLE
-            binding.imageView7.visibility = View.INVISIBLE
-            binding.textView3.visibility = View.INVISIBLE
-        }
+        binding.btnBuyNextMain.visibility = View.INVISIBLE
         binding.actualBtn.setOnClickListener {
-            binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
-            binding.completedBtn.setTextColor(resources.getColor(R.color.InactiveBottomNavIconColor))
-            if (mOrderViewModel.readAllData.value?.isEmpty() == true) {
-                recyclerView.visibility = View.INVISIBLE
-            } else {
-                recyclerView.visibility = View.VISIBLE
+            if (mOrderViewModel.readAllData.value?.isEmpty() == false) {
+                binding.btnBuyNextMain.visibility = View.VISIBLE
+                binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
+                binding.completedBtn.setTextColor(Color.parseColor("#C6CFFF"))
                 binding.womanClear.visibility = View.INVISIBLE
-                binding.imageView4.visibility = View.INVISIBLE
-                binding.imageView3.visibility = View.INVISIBLE
-                binding.textView2.visibility = View.INVISIBLE
-                binding.imageView3.visibility = View.INVISIBLE
-                binding.imageView5.visibility = View.INVISIBLE
-                binding.textView4.visibility = View.INVISIBLE
                 binding.rectBuy.visibility = View.INVISIBLE
                 binding.purchaiseTv.visibility = View.INVISIBLE
-                binding.imageView7.visibility = View.INVISIBLE
+                binding.imageView4.visibility = View.INVISIBLE
+                binding.textView4.visibility = View.INVISIBLE
+                binding.imageView5.visibility = View.INVISIBLE
                 binding.textView3.visibility = View.INVISIBLE
+                binding.textView2.visibility = View.INVISIBLE
+                binding.imageView3.visibility = View.INVISIBLE
+                binding.imageView7.visibility = View.INVISIBLE
+                binding.recyclerview.visibility = View.VISIBLE
+
+                binding.viewActual.visibility = View.VISIBLE
+                binding.viewCompleted.visibility = View.INVISIBLE
+
+            } else {
+                binding.btnBuyNextMain.visibility = View.INVISIBLE
+                binding.actualBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
+                binding.completedBtn.setTextColor(Color.parseColor("#C6CFFF"))
+                binding.womanClear.visibility = View.VISIBLE
+                binding.rectBuy.visibility = View.VISIBLE
+                binding.purchaiseTv.visibility = View.VISIBLE
+                binding.imageView4.visibility = View.VISIBLE
+                binding.textView4.visibility = View.VISIBLE
+                binding.imageView5.visibility = View.VISIBLE
+                binding.textView3.visibility = View.VISIBLE
+                binding.textView2.visibility = View.VISIBLE
+                binding.imageView3.visibility = View.VISIBLE
+                binding.imageView7.visibility = View.VISIBLE
+                binding.recyclerview.visibility = View.INVISIBLE
+
+                binding.viewActual.visibility = View.INVISIBLE
+                binding.viewCompleted.visibility = View.VISIBLE
             }
         }
         binding.completedBtn.setOnClickListener {
-            recyclerView.visibility = View.INVISIBLE
+            binding.btnBuyNextMain.visibility = View.INVISIBLE
+            binding.completedBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
+            binding.actualBtn.setTextColor(Color.parseColor("#C6CFFF"))
             binding.womanClear.visibility = View.VISIBLE
-            binding.imageView4.visibility = View.VISIBLE
-            binding.imageView3.visibility = View.VISIBLE
-            binding.textView2.visibility = View.VISIBLE
-            binding.imageView3.visibility = View.VISIBLE
-            binding.imageView5.visibility = View.VISIBLE
-            binding.textView4.visibility = View.VISIBLE
             binding.rectBuy.visibility = View.VISIBLE
             binding.purchaiseTv.visibility = View.VISIBLE
-            binding.imageView7.visibility = View.VISIBLE
+            binding.imageView4.visibility = View.VISIBLE
+            binding.textView4.visibility = View.VISIBLE
+            binding.imageView5.visibility = View.VISIBLE
             binding.textView3.visibility = View.VISIBLE
-            binding.completedBtn.setTextColor(resources.getColor(R.color.activeBottomNavIconColor))
-            binding.actualBtn.setTextColor(resources.getColor(R.color.InactiveBottomNavIconColor))
+            binding.textView2.visibility = View.VISIBLE
+            binding.imageView3.visibility = View.VISIBLE
+            binding.imageView7.visibility = View.VISIBLE
+            binding.recyclerview.visibility = View.INVISIBLE
 
+            binding.viewActual.visibility = View.INVISIBLE
+            binding.viewCompleted.visibility = View.VISIBLE
         }
 
+        if (mOrderViewModel.readAllData.value?.isNullOrEmpty() == false) {
+            binding.btnBuyNextMain.visibility = View.VISIBLE
+            binding.womanClear.visibility = View.INVISIBLE
+            binding.rectBuy.visibility = View.INVISIBLE
+            binding.purchaiseTv.visibility = View.INVISIBLE
+            binding.imageView4.visibility = View.INVISIBLE
+            binding.textView4.visibility = View.INVISIBLE
+            binding.imageView5.visibility = View.INVISIBLE
+            binding.textView3.visibility = View.INVISIBLE
+            binding.textView2.visibility = View.INVISIBLE
+            binding.imageView3.visibility = View.INVISIBLE
+            binding.imageView7.visibility = View.INVISIBLE
+            binding.recyclerview.visibility = View.VISIBLE
 
+        } else {
+            binding.btnBuyNextMain.visibility = View.INVISIBLE
+            binding.womanClear.visibility = View.VISIBLE
+            binding.rectBuy.visibility = View.VISIBLE
+            binding.purchaiseTv.visibility = View.VISIBLE
+            binding.imageView4.visibility = View.VISIBLE
+            binding.textView4.visibility = View.VISIBLE
+            binding.imageView5.visibility = View.VISIBLE
+            binding.textView3.visibility = View.VISIBLE
+            binding.textView2.visibility = View.VISIBLE
+            binding.imageView3.visibility = View.VISIBLE
+            binding.imageView7.visibility = View.VISIBLE
+            binding.recyclerview.visibility = View.INVISIBLE
+        }
     }
+
 }

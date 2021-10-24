@@ -15,6 +15,8 @@ class OnBoarding1Fragment : Fragment(R.layout.fragment_on_boarding1) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOnBoarding1Binding.bind(view)
 
+
+
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnnext.setOnClickListener {

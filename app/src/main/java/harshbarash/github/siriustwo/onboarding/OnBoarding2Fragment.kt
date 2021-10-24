@@ -17,6 +17,9 @@ class OnBoarding2Fragment :  Fragment(R.layout.fragment_on_boarding2) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOnBoarding2Binding.bind(view)
 
+        requireActivity().getWindow().setNavigationBarColor(getResources().getColor(R.color.spec));
+        requireActivity().getWindow().setStatusBarColor(getResources().getColor(R.color.spec));
+
         val viewPager =  activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.btnnext2.setOnClickListener {

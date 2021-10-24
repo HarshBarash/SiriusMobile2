@@ -19,8 +19,7 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        requireActivity().getWindow().setNavigationBarColor(getResources().getColor(R.color.spl));
-        requireActivity().getWindow().setStatusBarColor(getResources().getColor(R.color.spl));
+
 
 
 
