@@ -6,164 +6,348 @@
     android:layout_height="match_parent"
     tools:context=".data.fragments.add.RoomFragment">
 
-
-    <RadioGroup
-        android:id="@+id/rgRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <include
+        android:id="@+id/include"
+        layout="@layout/order_cleaning_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/oneRoom"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="1"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
-
-        </com.google.android.material.radiobutton.MaterialRadioButton>
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/twoRoom"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="2"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
-
-        </com.google.android.material.radiobutton.MaterialRadioButton>
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/threeRoom"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="3"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null"
-            >
-
-        </com.google.android.material.radiobutton.MaterialRadioButton>
-
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/fourRoom"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="4"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
-
-        </com.google.android.material.radiobutton.MaterialRadioButton>
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/rgToilet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgRoom">
+        app:layout_constraintTop_toBottomOf="@+id/include">
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/oneT"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="1"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        </com.google.android.material.radiobutton.MaterialRadioButton>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardImageContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/twoT"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="2"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-        </com.google.android.material.radiobutton.MaterialRadioButton>
+                    <ImageView
+                        android:id="@+id/imageOrderCleaning"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_200sdp"
+                        android:foreground="@drawable/clean_background"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rect_pic_order" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/threeT"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="3"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
+            <LinearLayout
+                android:id="@+id/containerOrderCleaningInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        </com.google.android.material.radiobutton.MaterialRadioButton>
+                <TextView
+                    android:id="@+id/tvOrderCleaningTittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center"
+                    android:text="Расскажите о вашей квартире"
+                    android:textColor="#35373E"
+                    android:textSize="@dimen/_22ssp" />
 
-        <com.google.android.material.radiobutton.MaterialRadioButton
-            android:id="@+id/fourT"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:text="4"
-            android:gravity="center"
-            android:textSize="@dimen/_24sdp"
-            android:textColor="@color/colorofdigitsroom"
-            android:drawable="@drawable/custom_room"
-            android:button="@null">
+                <TextView
+                    android:id="@+id/tvOrderCleaningRooms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center_horizontal"
+                    android:text="Количество комнат"
+                    android:textColor="#35373E"
+                    android:textSize="@dimen/_13ssp" />
 
-        </com.google.android.material.radiobutton.MaterialRadioButton>
-    </RadioGroup>
+                <RadioGroup
+                    android:id="@+id/rgRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/oneRoom"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/twoRoom"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/threeRoom"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/fourRoom"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvRooms1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_22ssp" />
+
+                    <TextView
+                        android:id="@+id/tvRooms2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_22ssp" />
+
+                    <TextView
+                        android:id="@+id/tvRooms3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_22ssp" />
+
+                    <TextView
+                        android:id="@+id/tvRooms4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="0dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_22ssp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvOrderCleaningBathrooms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="center_horizontal"
+                    android:text="Санузлов"
+                    android:textColor="#35373E"
+                    android:textSize="@dimen/_13ssp" />
+
+                <RadioGroup
+                    android:id="@+id/rgToilet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/oneT"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/twoT"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/threeT"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/fourT"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/ic_rect_num_room"
+                        android:button="@null"
+                        android:drawable="@drawable/custom_room"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:gravity="center"
+                        android:text="4"
+                        android:textColor="#3656F9"
+                        android:textSize="@dimen/_24sdp">
+
+                    </RadioButton>
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btntoadditionaly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:background="@drawable/ic_blue_button"
+                android:orientation="horizontal">
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btntoadditionaly"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_34sdp"
-        android:backgroundTint="@color/activeBottomNavIconColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgToilet"
-        app:layout_constraintVertical_bias="0.255"
-        tools:layout_editor_absoluteX="0dp" />
+                <TextView
+                    android:id="@+id/tvtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="start"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp" />
 
-    <TextView
-        android:id="@+id/tvtime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="40dp"
-        tools:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btntoadditionaly" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:textSize="@dimen/_15ssp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:text="Далее"/>
 
-    <TextView
-        android:id="@+id/tvprice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/btntoadditionaly"
-        app:layout_constraintEnd_toEndOf="@+id/btntoadditionaly"
-        app:layout_constraintTop_toTopOf="@+id/btntoadditionaly"
-        app:layout_constraintVertical_bias="0.48" />
+                <TextView
+                    android:id="@+id/tvprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:gravity="end"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15ssp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

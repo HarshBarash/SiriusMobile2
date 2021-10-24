@@ -15,6 +15,7 @@
     </androidx.viewpager2.widget.ViewPager2>
 
     <com.rd.PageIndicatorView
+        android:id="@+id/pageIndicatorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_14sdp"

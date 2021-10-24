@@ -18,7 +18,7 @@ class DataFragment : Fragment(R.layout.fragment_data) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDataBinding.bind(view)
 
-        binding.btnonpay.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             //переход дальше
             dataTransmission()
         }
@@ -42,7 +42,7 @@ class DataFragment : Fragment(R.layout.fragment_data) {
         val corpus = args.corpus
         val entrance = args.entrance
         val comment = args.comment
-        val data = "18.1"
+        val data = "3.11"
         val dataTime = "18:00"
 
         val action = DataFragmentDirections.actionDataFragmentToPayFragment(

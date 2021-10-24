@@ -24,6 +24,30 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
             dataTransmission()
         }
 
+        binding.backAdress.setOnClickListener{
+            findNavController().navigate(AdressFragmentDirections.actionAdressFragmentToAdditionallyFragment())
+        }
+        binding.infoAdress.setOnClickListener{
+            Toast.makeText(requireContext(), "Адрес доставки", Toast.LENGTH_SHORT).show()
+        }
+        binding.button2.setOnClickListener{
+            Toast.makeText(requireContext(), "Карты временно заблокированы", Toast.LENGTH_SHORT).show()
+        }
+
+        val args: AdressFragmentArgs by navArgs()
+        val room = args.room
+        val toilet = args.toilet
+        val order = args.order
+        val orderPrice = args.orderPrice
+        val orderTime = args.orderTime.toInt()
+
+        val titleR = ( if(room >= 2)  " Комнаты" else " Комната" )
+        val titleS = ( if(toilet >= 2)  " Санузла" else " Санузел" )
+        val titleH = ( if(orderTime >= 2)  " часа" else " час" )
+
+                binding.tvRoomToiletTimePriceAdress.text = (room.toString() + titleR + ", " + toilet.toString() + titleS + ", " + orderTime + titleH + ", " + orderPrice +  "₽")
+
+
     }
 
     private fun dataTransmission() {

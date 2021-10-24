@@ -10,6 +10,7 @@ import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.data.Order
 import harshbarash.github.siriustwo.data.OrderViewModel
 import harshbarash.github.siriustwo.databinding.FragmentOrderBinding
+import harshbarash.github.siriustwo.databinding.OrderCleaningToolbarVar2Binding
 
 
 class OrderFragment : Fragment(R.layout.fragment_order) {
@@ -22,6 +23,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentOrderBinding.bind(view)
+
 
         val args: OrderFragmentArgs by navArgs()
         val roomandtoilet = args.roomandtoilet
@@ -41,23 +43,29 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         val data = args.data
         val dataTime = args.dataTime
 
+        val romandtoilet_title: String = "Количество комнат и санузлов"
+        val price_title: String = "Цена"
+        val room_title: String = "Количество комнат"
+        val toilet_title: String = "Количество санузлов"
+        val order_title: String = "Заказ"
+        val order_price_title: String = "Стоимость услуг"
+        val order_time_title: String = "Время выполнения"
+        val city_title: String = "Город"
+        val street_title: String = "Улица"
+        val house_title: String = "Дом"
+        val flat_title: String = "Секция"
+        val corpus_title: String = "Корпус"
+        val entrance_title: String = "Количество комнат и санузлов"
+        val comment_title: String = "Комментарий"
+        val data_title: String = "Дата"
+        val dataTime_title: String = "Время"
 
-        binding.data1.text = roomandtoilet.toString()
-        binding.data2.text = price.toString()
-        binding.data3.text = room.toString()
-        binding.data4.text = toilet.toString()
-        binding.data5.text = order.toString()
-        binding.data6.text = orderPrice.toString()
-        binding.data7.text = orderTime.toString()
-        binding.data8.text = city.toString()
-        binding.data9.text = street.toString()
-        binding.data10.text = house.toString()
-        binding.data11.text = flat.toString()
-        binding.data12.text = corpus.toString()
-        binding.data13.text = entrance.toString()
-        binding.data14.text = comment.toString()
-        binding.data15.text = data.toString()
-        binding.data16.text = dataTime.toString()
+        binding.tvRoomToiletTimePriceAdress.text = (city + ", " + street + ", " + house)
+
+        binding.data1.text = data + "      " + dataTime
+        binding.data3.text = city + ", " + street + ", д" + house + ", корп " + corpus + ", кв." + flat + " " + entrance
+        binding.data5.text = order
+
 
         mOrderViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
 
@@ -88,10 +96,10 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
         val data = args.data
         val dataTime = args.dataTime
 
-        val ourorder = Order(0, city, street, house, corpus, flat, Integer.parseInt(price.toString()))
+        val ourorder =
+            Order(0, city, street, house, corpus, flat, Integer.parseInt(orderPrice))
         mOrderViewModel.addOrder(ourorder)
     }
-
 
 
 }

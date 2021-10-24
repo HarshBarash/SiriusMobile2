@@ -3,25 +3,51 @@ package harshbarash.github.siriustwo.data.fragments.add
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import harshbarash.github.siriustwo.R
-import harshbarash.github.siriustwo.databinding.FragmentPayBinding
+import harshbarash.github.siriustwo.databinding.FragmentPaymentBinding
+import harshbarash.github.siriustwo.databinding.OrderCleaningToolbarVar2Binding
 
 
-class PayFragment : Fragment(R.layout.fragment_pay) {
+class PayFragment : Fragment(R.layout.fragment_payment) {
 
-    private lateinit var binding: FragmentPayBinding
+    private lateinit var binding: FragmentPaymentBinding
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentPayBinding.bind(view)
+        binding = FragmentPaymentBinding.bind(view)
 
-        binding.btnonorder.setOnClickListener {
-            //переход дальше
+
+        binding.cardToCleanerBtn.setOnClickListener {
             dataTransmission()
         }
 
+        binding.moneyToCleanerBtn.setOnClickListener {
+            dataTransmission()
+        }
+
+        binding.applePayToCleanerBtn.setOnClickListener {
+            dataTransmission()
+        }
+
+        binding.googlePayToCleanerBtn.setOnClickListener {
+            dataTransmission()
+        }
+
+        val args: PayFragmentArgs by navArgs()
+        val room = args.room
+        val toilet = args.toilet
+        val order = args.order
+        val orderPrice = args.orderPrice
+        val orderTime = args.orderTime.toInt()
+        val titleR = ( if(room >= 2)  " Комнаты" else " Комната" )
+        val titleS = ( if(toilet >= 2)  " Санузла" else " Санузел" )
+        val titleH = ( if(orderTime >= 2)  " часа" else " час" )
+
+        binding.tvRoomToiletTimePriceAdress.text = (room.toString() + titleR + ", " + toilet.toString() + titleS + ", " + orderTime + titleH + ", " + orderPrice +  "₽")
     }
 
     private fun dataTransmission() {
@@ -47,7 +73,7 @@ class PayFragment : Fragment(R.layout.fragment_pay) {
         val action = PayFragmentDirections.actionPayFragmentToOrderFragment(
             roomandtoilet,
             price,
-            room,
+           room,
             toilet,
             order,
             orderPrice,

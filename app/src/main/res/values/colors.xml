@@ -11,13 +11,13 @@
     <color name="bottom">#F6F7FF</color>
     <color name="InactiveBottomNavIconColor">#BEC4FB</color>
     <color name="activeBottomNavIconColor">#3656F9</color>
-
+    <color name="spl">#3146C6</color>
     <color name="colorofdigitsroom">#9AA9FA</color>
     <color name="colorofinactiveroom">#EDF0FF</color>
 
-
     <color name="firstonboarding">#8698F9</color>
-
+    <color name="color_text">#35373E</color>
+    <color name="second_text_color">#A0A4C1</color>
 
 
 </resources>

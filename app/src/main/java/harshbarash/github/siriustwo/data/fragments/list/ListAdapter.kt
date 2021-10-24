@@ -18,9 +18,9 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = orderList[position]
-        holder.binding.tvOrder.text = currentItem.id.toString()
-        holder.binding.tvPrice.text = currentItem.id.toString()
-        holder.binding.tvAdress.text = currentItem.id.toString()
+        holder.binding.tvOrder.text = "#" + currentItem.id.toString()
+        holder.binding.tvPrice.text = currentItem.price.toString() + "₽"
+        holder.binding.tvAdress.text = (currentItem.city + "," + currentItem.street + "," + currentItem.house + "," + currentItem.corpus + "," +  currentItem.flat)
     }
 
     override fun getItemCount(): Int {

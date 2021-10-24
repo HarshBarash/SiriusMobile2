@@ -3,7 +3,6 @@ package harshbarash.github.siriustwo.onboarding
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.databinding.FragmentOnBoarding1Binding

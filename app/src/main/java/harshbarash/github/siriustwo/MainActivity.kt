@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         navigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if(destination.id == R.id.viewPagerFragment || destination.id == R.id.splashFragment ) {
+            if(destination.id == R.id.viewPagerFragment || destination.id == R.id.splashFragment || destination.id == R.id.dataFragment
+                || destination.id == R.id.adressFragment || destination.id == R.id.payFragment || destination.id == R.id.roomFragment
+                || destination.id == R.id.additionallyFragment || destination.id == R.id.orderFragment) {
                 navigationView.visibility = View.GONE
             } else {
                 navigationView.visibility = View.VISIBLE
