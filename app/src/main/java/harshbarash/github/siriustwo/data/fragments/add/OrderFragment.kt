@@ -74,6 +74,7 @@ class OrderFragment : Fragment(R.layout.fragment_order) {
             findNavController().navigate(R.id.action_orderFragment_to_mainFragment)
         }
 
+    
     }
 
     private fun insertDataToDatabase() {

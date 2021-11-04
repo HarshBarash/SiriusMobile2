@@ -41,11 +41,11 @@ class PayFragment : Fragment(R.layout.fragment_payment) {
         val room = args.room
         val toilet = args.toilet
         val order = args.order
-        val orderPrice = args.orderPrice
         val orderTime = args.orderTime.toInt()
+        val orderPrice = args.orderPrice
 
-        val titleR = ( if(toilet < 2) { " Комната" }
-        else if (toilet >= 2 && toilet < 5) { " Комнаты" }
+        val titleR = ( if(room < 2) { " Комната" }
+        else if (room >= 2 && room < 5) { " Комнаты" }
         else { " Комнат"})
 
         val titleS = ( if(toilet < 2) { " Санузел" }

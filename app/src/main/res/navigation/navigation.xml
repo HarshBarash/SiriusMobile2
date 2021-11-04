@@ -161,16 +161,14 @@
         <argument
             android:name="order"
             app:argType="string" />
-        <argument
-            android:name="orderPrice"
-            app:argType="string" />
-        <argument android:name="orderTime" />
+        <argument android:name="orderPrice" />
         <action
             android:id="@+id/action_adressFragment_to_additionallyFragment"
             app:destination="@id/additionallyFragment" />
         <action
             android:id="@+id/action_adressFragment_to_additionallyFragment2"
             app:destination="@id/additionallyFragment" />
+        <argument android:name="orderTime" />
     </fragment>
     <fragment
         android:id="@+id/dataFragment"
@@ -199,8 +197,8 @@
         <argument
             android:name="order"
             app:argType="string" />
-        <argument android:name="orderTime" />
         <argument android:name="orderPrice" />
+        <argument android:name="orderTime" />
         <action
             android:id="@+id/action_dataFragment_to_adressFragment"
             app:destination="@id/adressFragment" />
@@ -253,8 +251,8 @@
         <argument
             android:name="order"
             app:argType="string" />
-        <argument android:name="orderTime" />
         <argument android:name="orderPrice" />
+        <argument android:name="orderTime" />
         <argument
             android:name="city"
             app:argType="string" />

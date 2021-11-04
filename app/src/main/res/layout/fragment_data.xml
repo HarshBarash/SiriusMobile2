@@ -3,12 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OrderCleaningDateSelectionFragment">
+    android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/order_cleaning_acceptance_toolbar" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        app:cardBackgroundColor="#F8F8FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/backAdress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:background="?android:selectableItemBackground"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_back_without_rect" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Стандартная уборка"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/tvRoomToiletTimePriceAdress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/montserrat"
+            tools:text="1 Комната, 1 Санузел, 4 часа, 1290 ₽"
+            android:textSize="@dimen/_12ssp" />
+
+        <ImageButton
+            android:id="@+id/infoAdress"
+            android:background="?android:selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_50sdp"
+            android:src="@drawable/ic_entypo_info_with_circle" />
+
+
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/ivSelector2"
@@ -40,7 +87,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2">
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <ImageView
             android:layout_width="match_parent"

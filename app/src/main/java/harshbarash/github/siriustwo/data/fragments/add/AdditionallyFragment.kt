@@ -191,6 +191,11 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
 
             dataTransmission()
         }
+
+
+        binding.backAdress.setOnClickListener {
+            findNavController().navigate(R.id.action_additionallyFragment_to_roomFragment)
+        }
     }
 
         private fun dataTransmission() {

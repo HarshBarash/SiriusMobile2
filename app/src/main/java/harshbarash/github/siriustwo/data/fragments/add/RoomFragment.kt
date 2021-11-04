@@ -76,13 +76,17 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
                 if (roomandtoilet < 3) {
                     price = 650
                 } else {
-                    price = roomandtoilet * 200
+                    price = roomandtoilet * 200 + 100
                 }
 
                 binding.tvprice.text = (price.toString() + "₽")
 
 
             }
+        }
+
+        binding.backBtnOrder.setOnClickListener {
+            findNavController().navigate(R.id.action_roomFragment_to_mainFragment)
         }
     }
 

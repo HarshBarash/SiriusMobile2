@@ -57,6 +57,9 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
         binding.tvRoomToiletTimePriceAdress.text = (room.toString() + titleR + ", " + toilet.toString() + titleS + ", " + orderTime + titleH + ", " + orderPrice +  "₽")
 
 
+        binding.backAdress.setOnClickListener {
+            findNavController().navigate(R.id.action_adressFragment_to_additionallyFragment)
+        }
     }
 
     private fun dataTransmission() {
@@ -107,7 +110,7 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
     }
 
     private fun inputCheck(city: String, street: String, house: String, flat: String):Boolean{
-        return !(TextUtils.isEmpty(city) && TextUtils.isEmpty(street) && TextUtils.isEmpty(house) && TextUtils.isEmpty(flat) )
+        return (!TextUtils.isEmpty(city) && !TextUtils.isEmpty(street) && !TextUtils.isEmpty(house) && !TextUtils.isEmpty(flat) )
     }
 
 
