@@ -59,7 +59,7 @@
         android:id="@+id/woman_clear"
         android:layout_width="@dimen/_320sdp"
         android:layout_height="@dimen/_460sdp"
-        android:layout_marginBottom="@dimen/_75sdp"
+        android:layout_marginBottom="@dimen/_69sdp"
         android:src="@drawable/ic_cleaner_woman_svg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -15,7 +15,6 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
     var textRoom: Int = 1
     var textToilet: Int = 1
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentRoomBinding.bind(view)
@@ -32,7 +31,7 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
         )
 
         //только что вспомнил что нельзя выбирать все
-        for (n in array_radio) {
+          for (n in array_radio) {
             n.setOnClickListener {
                 if (n.currentTextColor != Color.WHITE) {
                     n.setTextColor(Color.WHITE)
@@ -53,7 +52,8 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
 
             }
 
-            val titleH = (if (textRoom + textToilet >= 2) " часа" else " час")
+            val titleH = (if (textRoom + textToilet >= 2) " часа" else " часов")
+
 
             binding.tvtime.text = ("≈ " + (textRoom + textToilet) + titleH).toString()
 
@@ -66,7 +66,7 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
 
                 }
 
-                val titleH = (if (textRoom + textToilet >= 2) " часа" else " час")
+                val titleH = (if (textRoom + textToilet >= 2) " часа" else " часов")
 
 //                binding.tvtime.text = textRoom.toString()
                 binding.tvtime.text = ("≈ " + (textRoom + textToilet) + titleH).toString()

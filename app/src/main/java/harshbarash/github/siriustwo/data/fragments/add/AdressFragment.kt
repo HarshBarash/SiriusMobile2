@@ -41,11 +41,20 @@ class AdressFragment : Fragment(R.layout.fragment_adress) {
         val orderPrice = args.orderPrice
         val orderTime = args.orderTime.toInt()
 
-        val titleR = ( if(room >= 2)  " Комнаты" else " Комната" )
-        val titleS = ( if(toilet >= 2)  " Санузла" else " Санузел" )
-        val titleH = ( if(orderTime >= 2)  " часа" else " час" )
 
-                binding.tvRoomToiletTimePriceAdress.text = (room.toString() + titleR + ", " + toilet.toString() + titleS + ", " + orderTime + titleH + ", " + orderPrice +  "₽")
+        val titleR = ( if(toilet < 2) { " Комната" }
+        else if (toilet >= 2 && toilet < 5) { " Комнаты" }
+        else { " Комнат"})
+
+        val titleS = ( if(toilet < 2) { " Санузел" }
+        else if (toilet >= 2 && toilet < 5) { " Санузла" }
+        else { " Санузлов"})
+
+        val titleH = ( if(orderTime < 2) { " час" }
+            else if (orderTime >= 2 && orderTime < 5 ) { " часa" }
+            else { " часов"})
+
+        binding.tvRoomToiletTimePriceAdress.text = (room.toString() + titleR + ", " + toilet.toString() + titleS + ", " + orderTime + titleH + ", " + orderPrice +  "₽")
 
 
     }

@@ -72,6 +72,48 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
             }
         }
 
+
+
+        binding.cbWashBath.setOnCheckedChangeListener { button, b ->
+            if (b)
+            {
+                Log.d("LOG_TAG","TRUE")
+                binding.cardWashBath.setCardBackgroundColor(Color.parseColor("#FFF2E6"))
+            }
+            else
+            {
+                Log.d("LOG_TAG","FALSE")
+                binding.cardWashBath.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
+            }
+        }
+
+        binding.cbRemoveScale.setOnCheckedChangeListener { button, b ->
+            if (b)
+            {
+                Log.d("LOG_TAG","TRUE")
+                binding.cardRemoveScale.setCardBackgroundColor(Color.parseColor("#FFF2E6"))
+            }
+            else
+            {
+                Log.d("LOG_TAG","FALSE")
+                binding.cardRemoveScale.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
+            }
+        }
+
+        binding.cbDeepToiletCleaning.setOnCheckedChangeListener { button, b ->
+            if (b)
+            {
+                Log.d("LOG_TAG","TRUE")
+                binding.cardDeepToiletClean.setCardBackgroundColor(Color.parseColor("#FFF2E6"))
+            }
+            else
+            {
+                Log.d("LOG_TAG","FALSE")
+                binding.cardDeepToiletClean.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
+            }
+        }
+
+
         binding.btnonadress.setOnClickListener {
 
             val WashDishes = binding.cbWashDishes.isChecked

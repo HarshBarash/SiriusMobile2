@@ -20,7 +20,7 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
         val currentItem = orderList[position]
         holder.binding.tvOrder.text = "#" + currentItem.id.toString()
         holder.binding.tvPrice.text = currentItem.price.toString() + "₽"
-        holder.binding.tvAdress.text = (currentItem.city + "," + currentItem.street + "," + currentItem.house + "," + currentItem.corpus + "," +  currentItem.flat)
+        holder.binding.tvAdress.text = (currentItem.city + ", " + currentItem.street + ", д "  + currentItem.house + ", корп " + currentItem.corpus  + ", кв." + currentItem.flat)
     }
 
     override fun getItemCount(): Int {
