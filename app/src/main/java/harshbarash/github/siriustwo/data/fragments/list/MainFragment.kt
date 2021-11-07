@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewTreeLifecycleOwner
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.data.OrderViewModel
 import harshbarash.github.siriustwo.databinding.FragmentMainBinding

@@ -78,7 +78,7 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
             if (b)
             {
                 Log.d("LOG_TAG","TRUE")
-                binding.cardWashBath.setCardBackgroundColor(Color.parseColor("#FFF2E6"))
+                binding.cardWashBath.setCardBackgroundColor(Color.parseColor("#F2F2F2"))
             }
             else
             {
@@ -91,7 +91,7 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
             if (b)
             {
                 Log.d("LOG_TAG","TRUE")
-                binding.cardRemoveScale.setCardBackgroundColor(Color.parseColor("#FFF2E6"))
+                binding.cardRemoveScale.setCardBackgroundColor(Color.parseColor("#F2F2F2"))
             }
             else
             {
@@ -104,7 +104,7 @@ class AdditionallyFragment : Fragment(R.layout.fragment_additionally) {
             if (b)
             {
                 Log.d("LOG_TAG","TRUE")
-                binding.cardDeepToiletClean.setCardBackgroundColor(Color.parseColor("#FFF2E6"))
+                binding.cardDeepToiletClean.setCardBackgroundColor(Color.parseColor("#F2F2F2"))
             }
             else
             {

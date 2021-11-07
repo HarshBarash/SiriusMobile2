@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.RadioButton
+import androidx.core.view.size
 import androidx.navigation.fragment.findNavController
 import harshbarash.github.siriustwo.R
 import harshbarash.github.siriustwo.databinding.FragmentRoomBinding
@@ -14,6 +15,7 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
     private lateinit var binding: FragmentRoomBinding
     var textRoom: Int = 1
     var textToilet: Int = 1
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,23 +27,53 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
         }
 
         //genius
-        val array_radio: Array<RadioButton> = arrayOf(
+        val array_radio_room: Array<RadioButton> = arrayOf(
             binding.oneRoom, binding.twoRoom, binding.threeRoom, binding.fourRoom,
             binding.oneT, binding.twoT, binding.threeT, binding.fourT
         )
+        val array_radio_toiletts: Array<RadioButton> = arrayOf(
+            binding.oneT, binding.twoT, binding.threeT, binding.fourT
+        )
+
 
         //только что вспомнил что нельзя выбирать все
-          for (n in array_radio) {
-            n.setOnClickListener {
-                if (n.currentTextColor != Color.WHITE) {
-                    n.setTextColor(Color.WHITE)
-                    n.setBackgroundResource(R.drawable.ic_rect_num_room_blue)
+        for (n in array_radio_room.indices) {
+            array_radio_room[n].setOnClickListener {
+                if (array_radio_room[n].currentTextColor != Color.WHITE) {
+                    array_radio_room[n].setTextColor(Color.WHITE)
+                    array_radio_room[n].setBackgroundResource(R.drawable.ic_rect_num_room_blue)
+                    for (i in array_radio_room.indices){
+                        if (i!=n && i<=3){
+                            array_radio_room[i].setTextColor(Color.parseColor("#3656F9"))
+                            array_radio_room[i].setBackgroundResource(R.drawable.ic_rect_num_room)
+                        }
+                    }
                 } else {
-                    n.setTextColor(Color.parseColor("#3656F9"))
-                    n.setBackgroundResource(R.drawable.ic_rect_num_room)
+                    array_radio_room[n].setTextColor(Color.parseColor("#3656F9"))
+                    array_radio_room[n].setBackgroundResource(R.drawable.ic_rect_num_room)
                 }
             }
         }
+
+        for (n in array_radio_toiletts.indices) {
+            array_radio_toiletts[n].setOnClickListener {
+                if (array_radio_toiletts[n].currentTextColor != Color.WHITE) {
+                    array_radio_toiletts[n].setTextColor(Color.WHITE)
+                    array_radio_toiletts[n].setBackgroundResource(R.drawable.ic_rect_num_room_blue)
+                    for (i in array_radio_toiletts.indices){
+                        if (i!=n && i<=3){
+                            array_radio_toiletts[i].setTextColor(Color.parseColor("#3656F9"))
+                            array_radio_toiletts[i].setBackgroundResource(R.drawable.ic_rect_num_room)
+                        }
+                    }
+                } else {
+                    array_radio_toiletts[n].setTextColor(Color.parseColor("#3656F9"))
+                    array_radio_toiletts[n].setBackgroundResource(R.drawable.ic_rect_num_room)
+                }
+            }
+        }
+
+
 
         binding.rgRoom.setOnCheckedChangeListener { radioGroup, i ->
             when (i) {
@@ -50,10 +82,25 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
                 binding.threeRoom.id -> textRoom = binding.threeRoom.text.toString().toInt()
                 binding.fourRoom.id -> textRoom = binding.fourRoom.text.toString().toInt()
 
+
+
+            }
+            val titleH = (if (textRoom + textToilet >= 2) " часа" else " час")
+
+//                binding.tvtime.text = textRoom.toString()
+            binding.tvtime.text = ("≈ " + (textRoom + textToilet) + titleH).toString()
+
+            val roomandtoilet = textRoom + textToilet
+            var price: Int = 650
+            if (roomandtoilet <= 3) {
+                price = 650
+            } else {
+                price = roomandtoilet * 200
             }
 
-            val titleH = (if (textRoom + textToilet >= 2) " часа" else " часов")
+            binding.tvprice.text = (price.toString() + "₽")
 
+            //val titleH = (if (textRoom + textToilet >= 2) " часа" else " час")
 
             binding.tvtime.text = ("≈ " + (textRoom + textToilet) + titleH).toString()
 
@@ -66,17 +113,17 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
 
                 }
 
-                val titleH = (if (textRoom + textToilet >= 2) " часа" else " часов")
+                val titleH = (if (textRoom + textToilet >= 2) " часа" else " час")
 
 //                binding.tvtime.text = textRoom.toString()
                 binding.tvtime.text = ("≈ " + (textRoom + textToilet) + titleH).toString()
 
                 val roomandtoilet = textRoom + textToilet
                 var price: Int = 650
-                if (roomandtoilet < 3) {
+                if (roomandtoilet <= 3) {
                     price = 650
                 } else {
-                    price = roomandtoilet * 200 + 100
+                    price = roomandtoilet * 200
                 }
 
                 binding.tvprice.text = (price.toString() + "₽")
@@ -116,4 +163,3 @@ class RoomFragment : Fragment(R.layout.fragment_room) {
 
     }
 }
-
