@@ -330,7 +330,8 @@
         <argument
             android:name="comment"
             app:argType="string" />
-        <argument android:name="data" />
+        <argument android:name="data"
+            app:argType="string" />
         <argument android:name="dataTime" />
         <action
             android:id="@+id/action_orderFragment_to_payFragment"

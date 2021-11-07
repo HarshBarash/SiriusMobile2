@@ -19,11 +19,12 @@
         <entry key="app/src/main/res/drawable/onboarding2_background.xml" value="0.371875" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/custom_row.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/data_view_pager.xml" value="0.2995614035087719" />
         <entry key="app/src/main/res/layout/fragment_additionally.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_adress.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_bonus.xml" value="0.18854166666666666" />
         <entry key="app/src/main/res/layout/fragment_cliner.xml" value="0.18854166666666666" />
-        <entry key="app/src/main/res/layout/fragment_data.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_data.xml" value="0.2980891719745223" />
         <entry key="app/src/main/res/layout/fragment_help.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_on_boarding1.xml" value="0.25" />
@@ -40,6 +41,7 @@
         <entry key="app/src/main/res/layout/fragment_view_pager.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/order_cleaning_acceptance_toolbar.xml" value="0.2995614035087719" />
         <entry key="app/src/main/res/layout/order_cleaning_toolbar.xml" value="0.2995614035087719" />
+        <entry key="app/src/main/res/layout/time_view_pager.xml" value="0.2995614035087719" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.371875" />
       </map>

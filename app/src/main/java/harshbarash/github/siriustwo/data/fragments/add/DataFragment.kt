@@ -1,11 +1,14 @@
 package harshbarash.github.siriustwo.data.fragments.add
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import harshbarash.github.siriustwo.R
+import harshbarash.github.siriustwo.data.fragments.add.ViewPagerData.ViewPagerDataAdapter
+import harshbarash.github.siriustwo.data.fragments.add.ViewPagerData.ViewPagerTimeAdapter
 import harshbarash.github.siriustwo.databinding.FragmentDataBinding
 
 
@@ -13,6 +16,12 @@ class DataFragment : Fragment(R.layout.fragment_data) {
 
 
     private lateinit var binding: FragmentDataBinding
+    val days =
+        listOf("1,пн", "2,вт", "3,ср", "4,чт", "5,пт", "6,сб", "7,вс", "8,пн", "9,вт", "10,ср", "11,чт", "12,пт", "13,cб", "14,вс", "15,пн", "16,вт",
+            "17,ср", "18,чт", "19,пт", "20,сб", "21,вс" , "22,пн" , "23,вт" , "24,ср" , "25,чт" , "26,пт", "27,сб", "28,вс", "29,пн" , "30,вт")
+    val time_hours =
+        listOf("1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00","8:00","9:00","10:00","11:00","12:00",
+            "13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00","00:00")
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,6 +31,24 @@ class DataFragment : Fragment(R.layout.fragment_data) {
             //переход дальше
             dataTransmission()
         }
+
+
+        val adapter = ViewPagerDataAdapter(days)
+        val adapter2 = ViewPagerTimeAdapter(time_hours)
+//        binding.dataVP.clipToPadding = false
+//        binding.dataVP.clipChildren = false
+//        binding.dataVP.offscreenPageLimit = 5
+//        binding.dataVP.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+//        val compositePageTransformer = CompositePageTransformer()
+//        compositePageTransformer.addTransformer(MarginPageTransformer(5))
+//        compositePageTransformer.addTransformer { page, position ->
+//            var r: Float = 1 - abs(position)
+//            page.scaleY = 0.85f + r * 0.15f
+//        }
+//        binding.dataVP.setPageTransformer(compositePageTransformer)
+        binding.dataVP.adapter = adapter
+        binding.timeVP.adapter = adapter2
+
 
         binding.backAdress.setOnClickListener {
             findNavController().navigate(R.id.action_dataFragment_to_adressFragment)
@@ -66,8 +93,9 @@ class DataFragment : Fragment(R.layout.fragment_data) {
         val corpus = args.corpus
         val entrance = args.entrance
         val comment = args.comment
-        val data = "3.11"
-        val dataTime = "18:00"
+
+        val data = days[binding.dataVP.currentItem]
+        val dataTime = time_hours[binding.timeVP.currentItem]
 
         val action = DataFragmentDirections.actionDataFragmentToPayFragment(
             roomandtoilet,
@@ -87,10 +115,10 @@ class DataFragment : Fragment(R.layout.fragment_data) {
             data,
             dataTime
         )
-
+        Log.d("DATA_INFO", "current day chose: $data") //проверка
+        Log.d("DATA_INFO", "current time chose: $dataTime") //проверка
         findNavController().navigate(action)
     }
-
 
 
 }
